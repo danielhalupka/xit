@@ -1,0 +1,32 @@
+{
+    "name": "xitme",
+    "version": "1.0.0",
+    "description": "AngularJS boilerplate generator",
+    "main": "xit.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danielhalupka/xit.git"
+    },
+    "keywords": [
+        "xit",
+        "angularjs",
+        "javascript",
+        "module",
+        "generator",
+        "boilerplate"
+    ],
+    "bin": {
+        "xit": "bin/xit.js"
+    },
+    
+    "preferGlobal": "true",
+    "author": "Danijel Halupka",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/danielhalupka/xit/issues"
+    },
+    "homepage": "https://github.com/danielhalupka/xit#readme"
+}
