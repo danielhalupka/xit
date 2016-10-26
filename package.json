@@ -19,7 +19,7 @@
         "boilerplate"
     ],
     "bin": {
-        "xit": "bin/xit.js"
+        "xitme": "bin/xit.js"
     },
     
     "preferGlobal": "true",
