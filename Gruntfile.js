@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     var gruntconfig = grunt.config.get('gruntconfig');
 
     grunt.initConfig({
+        is_classic: gruntconfig.is_classic,
         controller_name: gruntconfig.controller_name,
         module_name: gruntconfig.module_name,
         module_scope: gruntconfig.module_scope,
@@ -64,7 +65,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/Directive.js'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/Directive.js'], dest: __dirname + "/temp/"}
                 ]
             },
             filter: {
@@ -85,7 +86,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/Filter.js'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/Filter.js'], dest: __dirname + "/temp/"}
                 ]
             },
             partial: {
@@ -93,7 +94,7 @@ module.exports = function (grunt) {
                     patterns: []
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/directive.partial.html'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/directive.partial.html'], dest: __dirname + "/temp/"}
                 ]
             },
             model: {
@@ -114,7 +115,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/Model.js'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/Model.js'], dest: __dirname + "/temp/"}
                 ]
             },
             service: {
@@ -135,7 +136,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/Service.js'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/Service.js'], dest: __dirname + "/temp/"}
                 ]
             },
             controller: {
@@ -152,7 +153,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/Controller.js'], dest: __dirname + "/temp/"}
+                    {expand: true, flatten: true, src: [__dirname + '/lib/templates/<%= is_classic %>/Controller.js'], dest: __dirname + "/temp/"}
                 ]
             }
         },
@@ -186,6 +187,24 @@ module.exports = function (grunt) {
                 src: ['<%= directive_name %>Directive.js', '<%= directive_tag %>.directive.partial.html'],
                 dest: '<%= components_location %>/<%= module_scope %>/<%= module_name %>/',
                 expand: true
+            },
+            boilerplate: {
+                cwd: __dirname+ '/lib/boilerplate/', // set working folder / root to copy
+                src: '**/*', // copy all files and subfolders
+                dest:  "<%= components_location %>/",  // destination folder
+                expand: true           // required when using cwd
+            },
+            boilerplate_sample: {
+                cwd: __dirname+ '/lib/sample_boilerplate/', // set working folder / root to copy
+                src: '**/*', // copy all files and subfolders
+                dest:  "<%= components_location %>/",  // destination folder
+                expand: true           // required when using cwd
+            },
+            boilerplate_classic: {
+                cwd: __dirname+ '/lib/boilerplate_without_classjs/', // set working folder / root to copy
+                src: '**/*', // copy all files and subfolders
+                dest: "<%= components_location %>/", // destination folder
+                expand: true           // required when using cwd
             }
         },
         clean: {

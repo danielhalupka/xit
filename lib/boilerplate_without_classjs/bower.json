@@ -1,0 +1,22 @@
+{
+  "name": "xit-advanced-angularjs-boilerplate",
+  "version": "1.0.0",
+  "ignore": [
+    ".jshintrc",
+    "*.txt",
+    ".htaccess",
+    ".gitignore"
+  ],
+  "devDependencies": {
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-loader": "1.5.8",
+    "angular-filter": "0.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-route": "1.5.8",
+    "angular-local-storage": "~0.2.3",
+    "angular-cookies": "1.5.8",
+    "angular-touch": "1.5.8",
+    "angular-mocks": "1.5.8"
+  }
+}

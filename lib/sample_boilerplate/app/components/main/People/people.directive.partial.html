@@ -1,0 +1,14 @@
+<div>
+    <style>
+        .selected{
+            background-color: #858585;
+        }
+    </style>
+<table>
+    <tr data-ng-class="{'selected':(peopleCont._peopleModel._selected_person.id == person.id)}" data-ng-repeat="person in peopleCont._peopleModel._people track by $index">
+        <td data-ng-repeat="(key, value) in person">{{value}}</td>
+        <td><button data-ng-click="peopleCont.setSelectedPerson(person)">Select</button></td>
+    </tr>
+</table>
+    <button style="color:blue;">Refresh people.</button>
+</div>
