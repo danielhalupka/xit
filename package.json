@@ -1,6 +1,6 @@
 {
     "name": "xitme",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "AngularJS boilerplate generator",
     "main": "xit.js",
     "scripts": {
@@ -19,9 +19,18 @@
         "boilerplate"
     ],
     "bin": {
-        "xitme": "bin/xit.js"
+        "xitme": "xit.js"
     },
-    
+
+    "dependencies": {
+        "cli-color": "^1.1.0",
+        "commander": "latest",
+        "grunt": "^0.4.5",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-copy": "^0.8.2",
+        "grunt-contrib-rename": "0.0.3",
+        "grunt-replace": "latest"
+    },
     "preferGlobal": "true",
     "author": "Danijel Halupka",
     "license": "ISC",
